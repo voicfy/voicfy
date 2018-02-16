@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>voicfy | the voice over network</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' %>
+    <!--<link href="https://blackrockdigital.github.io/startbootstrap-agency/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+    <%= stylesheet_link_tag    'https://use.fontawesome.com/releases/v5.0.6/css/all.css' %>
+    <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Montserrat&Varela' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!--<script src="https://js.stripe.com/v3/"></script>-->
+    <!--<%= tag :meta, :name => "stripe-key", :content => "sk_test_gApSocp3D1BTrDxSASGvhRNZ" %>-->
+
+    <!-- Custom styles   -->
+    <!--<link href="https://blackrockdigital.github.io/startbootstrap-agency/css/agency.min.css" rel="stylesheet">-->
+  </head>
+
+  <body id="page-top">
+  <!--<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">-->
+
+    <!--<%= link_to image_tag('/images/voicfy_logo_red.png'), home_path, :alt => "voicfy | the voice-over network" %>-->
+
+    <!--<h5 class="my-0 mr-md-auto font-weight-normal"></h5>-->
+    <!--<nav class="my-2 my-md-0 mr-md-3">-->
+      <!--<a class="p-2 text-dark" href="#"><%= link_to "Home", home_path %></a>-->
+      <!--<a class="p-2 text-dark" href="#"><%= link_to "Search", voiceovers_path %></a>-->
+      <!--<a class="p-2 text-dark" href="#"><%= link_to "About us", about_path %></a>-->
+    <!--</nav>-->
+    <!--<%= link_to 'Sign Up', signin_path, :class => 'btn btn-outline-primary' %>-->
+    <!--<%= link_to 'logout', destroy_user_session_path, :class => 'btn btn-outline-primary', method: :delete %>-->
+  <!--</div>-->
+
+
+  <!-- Navigation -->
+  <!--<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">-->
+    <!--<div class="container">-->
+      <!--<%= link_to image_tag('/images/voicfy_logo_red.png'), home_path, :alt => "voicfy | the voice-over network" %>-->
+      <!--<a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>-->
+      <!--<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">-->
+        <!--Menu-->
+        <!--<i class="fa fa-bars"></i>-->
+      <!--</button>-->
+      <!--<div class="collapse navbar-collapse" id="navbarResponsive">-->
+        <!--<ul class="navbar-nav ml-auto">-->
+          <!--<li class="nav-item">-->
+            <!--<a class="nav-link js-scroll-trigger" href="#download"><%= link_to "Home", home_path %></a>-->
+          <!--</li>-->
+          <!--<li class="nav-item">-->
+            <!--<a class="nav-link js-scroll-trigger" href="#features"><%= link_to "Search", voiceovers_path %></a>-->
+          <!--</li>-->
+          <!--<li class="nav-item">-->
+            <!--<a class="nav-link js-scroll-trigger" href="#contact"><%= link_to "Search", voiceovers_path %></a>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<%= link_to 'Sign Up', signin_path, :class => 'btn btn-outline-primary' %>-->
+            <!--<%= link_to 'logout', destroy_user_session_path, :class => 'btn btn-outline-primary', method: :delete %>-->
+          <!--</li>-->
+        <!--</ul>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</nav>-->
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <%= link_to image_tag('/images/voicfy_logo_red.png'), home_path, :alt => "voicfy | the voice-over network" %>
+      <!--<a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>-->
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <%= link_to "About us", about_path, :class => 'nav-link js-scroll-trigger' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Home", home_path, :class => 'nav-link js-scroll-trigger' %>
+          </li>
+          <li class="nav-item">
+          <%= link_to "Search", voiceovers_path, :class => 'nav-link js-scroll-trigger'  %>
+          </li>
+          
+
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to('Logout', destroy_user_session_path, :class => 'btn btn-outline-primary', method: :delete) %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to 'Login', new_user_session_path, :class => 'nav-link js-scroll-trigger'  %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'sign up', new_user_registration_path, :class => 'nav-link js-scroll-trigger' %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <%= yield %>
+
+  <footer>
+    <div class="container">
+      <p>&copy; voicfy <%= Time.new.year %>. All Rights Reserved.</p>
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="#">Privacy</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#">Terms</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#">FAQ</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://blackrockdigital.github.io/startbootstrap-agency/vendor/jquery/jquery.min.js"></script>
+  <script src="https://blackrockdigital.github.io/startbootstrap-agency/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="https://blackrockdigital.github.io/startbootstrap-agency/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="https://blackrockdigital.github.io/startbootstrap-agency/js/agency.min.js"></script>
+
+  </body>
+</html>

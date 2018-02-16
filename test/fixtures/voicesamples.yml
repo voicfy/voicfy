@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  userID: MyString
+  productioncategory: MyString
+  audiofile: MyString
+  client: MyString
+  voiceover: one
+
+two:
+  userID: MyString
+  productioncategory: MyString
+  audiofile: MyString
+  client: MyString
+  voiceover: two

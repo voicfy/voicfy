@@ -1,0 +1,17 @@
+<div class="container">
+  <h1><%= @voiceover.firstname %> <%= @voiceover.lastname %></h1>
+
+  <p><%= @voiceover.street %></p>
+  <p><%= @voiceover.city_code %></p>
+  <p><%= @voiceover.city %></p>
+  <p><%= @voiceover.state %></p>
+  <p><%= @voiceover.country %></p>
+  <hr>
+  <%= link_to "Edit", edit_voiceover_path(@voiceover), :class => 'btn btn-default' %>
+  <%= link_to "Delete", edit_voiceover_path(@voiceover),
+              method: :delete,
+              data: {confirm: 'Are you sure?'},
+              :class => 'btn btn-danger' %>
+  <hr>
+
+</div>

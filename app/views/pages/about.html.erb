@@ -1,0 +1,245 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4" style="font-family: Montserrat, sans-serif;font-weight:800;text-transform: uppercase; ">Pricing</h1>
+  <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's built with default Bootstrap components and utilities with little customization.</p>
+</div>
+
+# This is your actual key, copy and paste it "AS IS".
+API_KEY     = 'pkey_41d2e7ea7d95deb5'
+
+# Environment can be 'staging' or 'production'.
+environment = 'production'
+
+# Create a new client object.
+client = AcceptOn::Client.new(api_key: API_KEY, environment: environment)
+
+# Replace the values below. Price values are always handled as cents to
+# prevent any rounding errors in the value.
+amount          = 1099
+description     = 'Test Charge'
+application_fee = 99     # optional
+currency        = 'usd'  # optional, defaults to 'usd'
+
+# Create the token. Note, this is a blocking HTTP call.
+response = client.create_token(amount: amount, application_fee: application_fee,
+currency: currency, description: description)
+token = response.id
+
+<div class="container">
+  <div id="accepton-form"></div>
+  <script src="https://js.accepton.com/scripts/accepton.js"
+          class="accepton-button"
+          data-public-key="pkey_41d2e7ea7d95deb5"
+          data-redirect-uri=""
+          data-token="rtx_a158d2b0760f21d3c92f10eb2d346eeb"
+          data-additional-fields=""
+          data-customer-email=""
+          data-target="accepton-form">
+  </script>
+</div>
+<div id="accepton-form"></div>
+<script src="https://js.accepton.com/scripts/accepton.js"
+        class="accepton-button"
+        data-public-key="pkey_41d2e7ea7d95deb5"
+        data-redirect-uri=""
+        data-token="rtx_f181d732ade267b4a029c9e2532f50ce"
+        data-additional-fields=""
+        data-customer-email=""
+        data-target="accepton-form">
+</script>
+<noscript>You must enable javascript to pay with this form.</noscript>
+<noscript>You must enable javascript to pay with this form.</noscript>
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Free</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>10 users included</li>
+          <li>2 GB of storage</li>
+          <li>Email support</li>
+          <li>Help center access</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+      </div>
+    </div>
+    <div class="card mb-4 box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Pro</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>20 users included</li>
+          <li>10 GB of storage</li>
+          <li>Priority email support</li>
+          <li>Help center access</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
+      </div>
+    </div>
+    <div class="card mb-4 box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Enterprise</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>30 users included</li>
+          <li>15 GB of storage</li>
+          <li>Phone and email support</li>
+          <li>Help center access</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <form data-bitwarden-watching="1">
+  <fieldset>
+    <legend>Legend</legend>
+    <div class="form-group row">
+      <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="email@example.com">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <label for="exampleSelect1">Example select</label>
+      <select class="form-control" id="exampleSelect1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleSelect2">Example multiple select</label>
+      <select multiple="" class="form-control" id="exampleSelect2">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleTextarea">Example textarea</label>
+      <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputFile">File input</label>
+      <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+      <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+    </div>
+    <fieldset class="form-group">
+      <legend>Radio buttons</legend>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+          Option one is this and that—be sure to include why it's great
+        </label>
+      </div>
+      <div class="form-check">
+      <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+          Option two can be something else and selecting it will deselect option one
+        </label>
+      </div>
+      <div class="form-check disabled">
+      <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled="">
+          Option three is disabled
+        </label>
+      </div>
+    </fieldset>
+    <fieldset class="form-group">
+      <legend>Checkboxes</legend>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" value="" checked="">
+          Option one is this and that—be sure to include why it's great
+        </label>
+      </div>
+      <div class="form-check disabled">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" value="" disabled="">
+          Option two is disabled
+        </label>
+      </div>
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </fieldset>
+</form>
+
+    <div class="form-group">
+      <fieldset disabled="">
+        <label class="control-label" for="disabledInput">Disabled input</label>
+        <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
+      </fieldset>
+    </div>
+
+    <div class="form-group">
+      <fieldset>
+        <label class="control-label" for="readOnlyInput">Readonly input</label>
+        <input class="form-control" id="readOnlyInput" type="text" placeholder="Readonly input here…" readonly="">
+      </fieldset>
+    </div>
+
+    <div class="form-group has-success">
+      <label class="form-control-label" for="inputSuccess1">Valid input</label>
+      <input type="text" value="correct value" class="form-control is-valid" id="inputValid">
+      <div class="valid-feedback">Success! You've done it.</div>
+    </div>
+
+    <div class="form-group has-danger">
+      <label class="form-control-label" for="inputDanger1">Invalid input</label>
+      <input type="text" value="wrong value" class="form-control is-invalid" id="inputInvalid">
+      <div class="invalid-feedback">Sorry, that username's taken. Try another?</div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-form-label col-form-label-lg" for="inputLarge">Large input</label>
+      <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" id="inputLarge">
+    </div>
+
+    <div class="form-group">
+      <label class="col-form-label" for="inputDefault">Default input</label>
+      <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
+    </div>
+
+    <div class="form-group">
+      <label class="col-form-label col-form-label-sm" for="inputSmall">Small input</label>
+      <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" id="inputSmall">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">Input addons</label>
+      <div class="form-group">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">$</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+          <div class="input-group-append">
+            <span class="input-group-text">.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+

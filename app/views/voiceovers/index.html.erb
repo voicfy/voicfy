@@ -1,0 +1,206 @@
+<div class="container">
+  <hr>
+  <h1>Main Narrator</h1>
+  <h2>GERMAN</h2>
+  <h4 class="thin">DE_DE</h4>
+
+  <br>
+
+  <p><b>LANGUAGE</b> <t>GERMAN</t>   <b>ORIGIN</b> <t>GERMANY</t>    <b>ACCENT</b> <t>NORDDEUTSCH</t></p>
+  <p><b>CATEGORY</b> <t>TV-Commercial</t></p>
+  <p><b>STUDIO</b> <t>EXTERNAL</t>   <b>LOCATION</b> <t>Linienstraße 145, 10115 Berlin</t>    <b>RADIUS</b> <t>100 KM</t></p>
+
+  <br>
+
+  <p><h4>Search Results</h4></p>
+
+    <% @voiceovers.each do |voiceover| %>
+      <div class="well well-sm vorow">
+        <%= link_to "#{voiceover.firstname} #{voiceover.lastname}", voiceover_path(voiceover.id)%>
+
+        <%= link_to "READ MORE", voiceovers_path(voiceover), :class => 'btn btn-default' %>
+      </div>
+    <% end %>
+  <div class="well well-sm vorow text-center"><small class="smalladv">FOLLOWING VOICES ARE ONLY MANAGED BY AGENCIES AND RECORDING STUDIOS</small></div>
+  <% @voiceovers.each do |voiceover| %>
+    <div class="well well-sm vorow">
+      <%= link_to voiceovers_path(voiceover), "#{voiceover.firstname} #{voiceover.lastname}" %>
+
+      <!--<%= link_to "READ MORE", voiceovers_path(voiceover), :class => 'btn btn-default' %>-->
+    </div>
+  <% end %>
+  <br>
+  <div class="text-center">
+    <div class="btn btn-outline-primary ">more voices</div>
+  </div>
+  <br>
+  <br>
+
+  <p><h4>THESE VOICES MAY INTEREST YOU TOO</h4></p>
+
+  <% @voiceovers.each do |voiceover| %>
+    <div class="well well-sm vorow">
+      <%= link_to "#{voiceover.firstname} #{voiceover.lastname}", voiceovers_path(voiceover)%><%= %>
+
+      <%= link_to "READ MORE", voiceovers_path(voiceover), :class => 'btn btn-default' %>
+    </div>
+  <% end %>
+  <br>
+  <div class="text-center">
+    <div class="btn btn-outline-primary ">more voices</div>
+  </div>
+
+  <br>
+  <br>
+  <hr>
+  <br>
+  <br>
+
+  <h1>Create Project</h1>
+  <form data-bitwarden-watching="1">
+    <fieldset>
+
+      <legend>CATEGORY</legend>
+
+      <div class="form-check-inline">
+        <label for="exampleSelect1">Category</label>
+        <select class="form-control" id="exampleSelect1">
+          <option>Audioguide</option>
+          <option>TV-Commercial</option>
+          <option>E-Learning</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleSelect1">Branch</label>
+        <select class="form-control" id="exampleSelect1">
+          <option>Automobil</option>
+          <option>Fin-Tech</option>
+          <option>Industry</option>
+          <option>Educational</option>
+          <option>Multimedia</option>
+        </select>
+      </div>
+
+      <fieldset class="form-group">
+        <legend>BUYOUT</legend>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="" >
+            Internet
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="" >
+            TV
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="" >
+            Radio
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="" >
+            Cinema
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="" >
+            Tradeshow
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="" >
+            Point of Sale (P.O.S.)
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="" >
+            Intern
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-group">
+        <legend>Radio buttons</legend>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+            All time Buyout
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+            1 Jahr
+          </label>
+        </div>
+        <div class="form-check disabled">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" >
+            2 Jahr
+          </label>
+        </div>
+        <div class="form-check disabled">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" >
+            3 Jahr
+          </label>
+        </div>
+        <div class="form-check disabled">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" >
+            4 Jahr
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="form-group">
+        <label for="exampleSelect1">Region</label>
+        <select class="form-control" id="exampleSelect1">
+          <option>D.A.C.H.</option>
+          <option>Europe</option>
+          <option>USA</option>
+          <option>Canada</option>
+          <option>North-America</option>
+          <option>South-America</option>
+        </select>
+      </div>
+
+      <fieldset class="form-group">
+        <legend>Radio buttons</legend>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+            Major Brand
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+            Midsize Company
+          </label>
+        </div>
+        <div class="form-check disabled">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled="">
+            Small Company
+          </label>
+        </div>
+        <div class="form-check disabled">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled="">
+            Non-Profit
+          </label>
+        </div>
+      </fieldset>
+</div>
